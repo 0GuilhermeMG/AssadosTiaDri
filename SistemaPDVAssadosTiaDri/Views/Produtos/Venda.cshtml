@@ -7,11 +7,19 @@
 <h2>Venda de Produtos</h2>
 
 <!-- Formulário para entrada de código de barras -->
-<form asp-action="AdicionarProduto" method="post">
+<form id="barcodeForm" asp-action="AdicionarProduto" method="post">
     <label for="codigoBarras">Código de Barras:</label>
-    <input type="text" id="codigoBarras" name="codigoBarras" required />
-    <button type="submit">Adicionar Produto</button>
+    <input type="text" id="codigoBarras" name="codigoBarras" required autofocus />
 </form>
+
+<script >
+    src = "/_framework/aspnetcore-browser-refresh.js"
+    document.getElementById('codigoBarras').addEventListener('input', function () {
+        if (this.value.length == 13) {
+            document.getElementById('barcodeForm').submit();
+        }
+    });
+</script>
 
 <!-- Exibição dos produtos no carrinho -->
 @if (Model != null && Model.Count > 0)
@@ -21,27 +29,33 @@
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Preço</th>
+                <th>Preço</th>               
             </tr>
         </thead>
         <tbody>
             @foreach (var produto in Model)
             {
+                //decimal precoDoBanco = preco / produto.Preco;
+
                 <tr>
                     <td>@produto.Nome</td>
-                    <td>@produto.Preco</td>
+                    <td>@produto.Preco.ToString("C")</td>
                 </tr>
             }
         </tbody>
     </table>
 
     <!-- Exibição do total -->
-    <h3>Total: @ViewBag.Total</h3>
+    <h3>Total: @ViewBag.Total.ToString("C")</h3>
 }
 else
 {
     <p>Nenhum produto no carrinho.</p>
 }
 
+<form asp-action="FinalizarVenda" method="post">
+    <button type="submit" id="FinalizarVenda">Finalizar Venda</button>
+</form>
+
 <!-- Script para o Browser Refresh -->
-<script src="/_framework/aspnetcore-browser-refresh.js"></script>
+

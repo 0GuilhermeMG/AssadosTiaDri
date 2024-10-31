@@ -1,0 +1,29 @@
+﻿@model SistemaPDVAssadosTiaDri.Models.Venda
+
+<h2>Detalhes da Venda</h2>
+
+<p>Venda realizada em: @Model.DataVenda</p>
+<p>Total: R$ @Model.Total</p>
+
+<h3>Itens da Venda</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Produto</th>           
+            <th>Preço Unitário</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Itens)
+        {
+            <tr>
+                <td>@item.Produto.Nome</td>               
+                <td>R$ @item.Preco</td>
+                <td>R$ @(item.Preco)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Produtos/ListarVendas" class="btn btn-primary">Ver todas as vendas</a>

@@ -1,0 +1,40 @@
+﻿@model List<SistemaPDVAssadosTiaDri.Models.Produto>
+@{
+    ViewBag.Title = "Finalizar Venda";
+}
+
+<h2>Finalizar Venda</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <h3>Itens no Carrinho:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model)
+            {
+                <tr>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Preco.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Exibição do total -->
+    <h3>Total: @ViewBag.Total.ToString("C")</h3>
+
+    <!-- Botão para confirmar a compra -->
+    <form asp-action="ConfirmarVenda" method="post">
+        <button type="submit">Confirmar Compra</button>
+    </form>
+}
+else
+{
+    <p>Nenhum produto no carrinho.</p>
+}

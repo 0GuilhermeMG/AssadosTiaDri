@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SistemaPDVAssadosTiaDri.Models.Venda>
+
+
+<h2>Lista de Vendas</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data da Venda</th>
+            <th>Total</th>
+            <th>Itens</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venda in Model)
+        {
+            <tr>
+                <td>@venda.VendaId</td>
+                <td>@venda.DataVenda.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                <td>@venda.Total.ToString("C")</td>
+                <td>   
+                    <ul>
+                        @foreach (var item in venda.Itens)
+                        {                       
+                            <li>@item.Produto.Nome - @item.Preco.ToString("C")</li>
+                        }               
+                    </ul>  
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

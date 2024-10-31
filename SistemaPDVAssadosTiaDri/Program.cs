@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaPDVAssadosTiaDri.Models;
-using SistemaPDVAssadosTiaDri.Services; // Certifique-se de que o namespace do VendaService esteja correto
+using SistemaPDVAssadosTiaDri.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +12,18 @@ builder.Services.AddDbContext<PDVContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+// Adiciona suporte a sessões
+builder.Services.AddDistributedMemoryCache(); // Necessário para armazenar dados da sessão na memória
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Tempo de expiração da sessão
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
+// Adiciona serviços personalizados
 builder.Services.AddScoped<VendaService>();
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor(); // Necessário para acessar HttpContext na aplicação
 
 var app = builder.Build();
 
@@ -30,6 +38,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession(); // Habilita o uso de sessões na aplicação
 
 app.UseAuthorization();
 

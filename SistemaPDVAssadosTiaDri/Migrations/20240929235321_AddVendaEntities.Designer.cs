@@ -12,8 +12,8 @@ using SistemaPDVAssadosTiaDri.Models;
 namespace SistemaPDVAssadosTiaDri.Migrations
 {
     [DbContext(typeof(PDVContext))]
-    [Migration("20240910173911_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240929235321_AddVendaEntities")]
+    partial class AddVendaEntities
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,10 +33,13 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemVendaId"));
 
-                    b.Property<decimal>("PrecoUnitario")
+                    b.Property<decimal>("Preco")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
                     b.Property<int>("VendaId")
@@ -59,6 +62,10 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProdutoId"));
 
+                    b.Property<string>("CodigoDeBarras")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -79,7 +86,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VendaId"));
 
-                    b.Property<DateTime>("Data")
+                    b.Property<DateTime>("DataVenda")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Total")
@@ -99,7 +106,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
                         .IsRequired();
 
                     b.HasOne("SistemaPDVAssadosTiaDri.Models.Venda", "Venda")
-                        .WithMany("ItensVenda")
+                        .WithMany("Itens")
                         .HasForeignKey("VendaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -111,7 +118,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
             modelBuilder.Entity("SistemaPDVAssadosTiaDri.Models.Venda", b =>
                 {
-                    b.Navigation("ItensVenda");
+                    b.Navigation("Itens");
                 });
 #pragma warning restore 612, 618
         }

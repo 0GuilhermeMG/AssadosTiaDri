@@ -130,6 +130,8 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             return View(produto);
         }
 
+
+
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -167,16 +169,17 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         public IActionResult AdicionarProduto(string codigoBarras)
         {
 
-            Console.WriteLine($"Código de barras recebido: {codigoBarras}"); // Adiciona uma mensagem de log
+            Console.WriteLine($"Código de barras recebido: {codigoBarras}");
 
             var produto = _vendaService.ProcessarCodigoBarras(codigoBarras);
             //Console.WriteLine($"Informações da tentativa de retirar: Nome={produto.Nome}, Preço={produto.Preco}");
             if (produto != null)
             {
-                Console.WriteLine($"Produto encontrado: Nome={produto.Nome}, Preço={produto.Preco}"); // Adiciona uma mensagem de log
+                Console.WriteLine($"Produto encontrado: Nome={produto.Nome}, Preço={produto.Preco}"); 
+
                 _vendaService.AdicionarAoCarrinho(produto);
                 ViewBag.Total = _vendaService.CalcularTotal();
-                return View("Venda", _vendaService.ObterCarrinho());
+                return View("Venda", _vendaService.ObterCarrinho());   
             }
             else
             {
@@ -185,7 +188,65 @@ namespace SistemaPDVAssadosTiaDri.Controllers
                 ViewBag.Total = _vendaService.CalcularTotal();
                 return View("Venda", _vendaService.ObterCarrinho());
             }
+
+            //return View("Venda", _vendaService.ObterCarrinho());
         }
+
+        [HttpPost]
+        public async Task<IActionResult> FinalizarVenda()
+        {
+            // Crie uma nova venda antes de passar ao serviço
+            var venda = new Venda
+            {
+                DataVenda = DateTime.Now,
+                Total = _vendaService.CalcularTotal()
+                // Outros campos que você precisar preencher
+            };
+
+            var vendaId = _vendaService.FinalizarVendas(venda);
+            _vendaService.FinalizarVenda();
+
+            return RedirectToAction("ConfirmacaoVenda", new { id = vendaId });
+        }
+
+
+        public IActionResult ConfirmacaoVenda(int id)
+        {
+            var venda = _context.Vendas
+                .Include(v => v.Itens) // Inclui os itens relacionados à venda
+                .ThenInclude(iv => iv.Produto) // Inclui as informações do produto
+                .FirstOrDefault(v => v.VendaId == id);
+
+            if (venda == null)
+            {
+                return NotFound(); // Caso a venda não seja encontrada
+            }
+
+            return View(venda); // Retorna a View com os detalhes da venda
+        }
+
+        public IActionResult ListarVendas()
+        {
+            // Pega todas as vendas do banco de dados
+            var vendas = _context.Vendas
+                .Include(v => v.Itens)
+                .ThenInclude(i => i.Produto)
+                .OrderByDescending(v => v.DataVenda) // Ordena por data da venda em ordem decrescente
+                .ToList();
+
+            // Retorna as vendas para a view
+            return View(vendas);
+        }
+       
+
+        //        [HttpPost]
+        //        public IActionResult FinalizarVenda()
+        //        {
+        //            ViewBag.Total = _vendaService.CalcularTotal();
+        //            _vendaService.FinalizarVenda();
+        //            //return RedirectToAction("Venda");
+        //            return View("FinalizarVenda", _vendaService.ObterCarrinho());
+        //        }
 
     }
 }
