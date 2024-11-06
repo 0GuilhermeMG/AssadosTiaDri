@@ -60,14 +60,14 @@ namespace SistemaPDVAssadosTiaDri.Services
 
         public int FinalizarVendas(Venda venda)
         {
-            _context.Vendas.Add(venda);
+            //_context.Vendas.Add(venda);
             _context.SaveChanges();
 
             return venda.VendaId; // Retorna o ID da venda
         }
 
 
-        public void FinalizarVenda()
+        public async Task<int>FinalizarVenda()
         {
             var venda = new Venda
             {
@@ -82,9 +82,10 @@ namespace SistemaPDVAssadosTiaDri.Services
             };
 
             _context.Vendas.Add(venda);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-            LimparCarrinho(); // Limpa o carrinho após finalizar a venda           
+            LimparCarrinho(); // Limpa o carrinho após finalizar a venda
+            return venda.VendaId;
         }
 
         public void AdicionarAoCarrinho(Produto produto)

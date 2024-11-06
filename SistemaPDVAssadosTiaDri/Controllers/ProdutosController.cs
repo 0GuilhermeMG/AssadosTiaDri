@@ -195,18 +195,21 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         [HttpPost]
         public async Task<IActionResult> FinalizarVenda()
         {
+            int vendaId = await _vendaService.FinalizarVenda();
             // Crie uma nova venda antes de passar ao serviço
-            var venda = new Venda
-            {
-                DataVenda = DateTime.Now,
-                Total = _vendaService.CalcularTotal()
-                // Outros campos que você precisar preencher
-            };
+            //var venda = new Venda
+            //{
+            //    DataVenda = DateTime.Now,
+            //    Total = _vendaService.CalcularTotal()
+            //  //   Outros campos que você precisar preencher
+            //};
 
-            var vendaId = _vendaService.FinalizarVendas(venda);
-            _vendaService.FinalizarVenda();
+            //var vendaId = _vendaService.FinalizarVendas(venda);
+            //_vendaService.FinalizarVenda();
 
-            return RedirectToAction("ConfirmacaoVenda", new { id = vendaId });
+            //Testar se funciona antes de dormir pfvr
+
+            return RedirectToAction("ConfirmacaoVenda" , new { id = vendaId });
         }
 
 
