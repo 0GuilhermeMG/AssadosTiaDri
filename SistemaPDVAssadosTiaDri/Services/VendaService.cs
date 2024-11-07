@@ -58,13 +58,13 @@ namespace SistemaPDVAssadosTiaDri.Services
 
   
 
-        public int FinalizarVendas(Venda venda)
-        {
-            //_context.Vendas.Add(venda);
-            _context.SaveChanges();
+        //public int FinalizarVendas(Venda venda)
+        //{
+        //    _context.Vendas.Add(venda);
+        //    _context.SaveChanges();
 
-            return venda.VendaId; // Retorna o ID da venda
-        }
+        //    return venda.VendaId; // Retorna o ID da venda
+        //}
 
 
         public async Task<int>FinalizarVenda()
@@ -110,10 +110,10 @@ namespace SistemaPDVAssadosTiaDri.Services
             Carrinho = new List<Produto>();
         }
 
-        public void RemoverDoCarrinho(int produtoId)
+        public void RemoverItemDoCarrinho(int produtoId, decimal preco)
         {
             var carrinho = Carrinho;
-            var produto = carrinho.FirstOrDefault(p => p.ProdutoId == produtoId);
+            var produto = carrinho.FirstOrDefault(p => p.ProdutoId == produtoId && p.Preco == preco);
             if (produto != null)
             {
                 carrinho.Remove(produto);

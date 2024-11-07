@@ -240,7 +240,15 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             // Retorna as vendas para a view
             return View(vendas);
         }
-       
+
+
+        [HttpPost]
+        public IActionResult RemoverItem(int produtoId, decimal preco)
+        {
+            _vendaService.RemoverItemDoCarrinho(produtoId,preco);
+            Console.WriteLine($"produto={produtoId}, preço={preco}");
+            return RedirectToAction("Venda");
+        }
 
         //        [HttpPost]
         //        public IActionResult FinalizarVenda()

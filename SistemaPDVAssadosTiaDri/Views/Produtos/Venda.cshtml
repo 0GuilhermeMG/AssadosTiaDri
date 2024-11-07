@@ -29,7 +29,8 @@
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Preço</th>               
+                <th>Preço</th> 
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,13 @@
                 <tr>
                     <td>@produto.Nome</td>
                     <td>@produto.Preco.ToString("C")</td>
+                    <td>
+                        <form method="post" asp-action="RemoverItem">
+                            <input type="hidden" name="produtoId" value="@produto.ProdutoId" />
+                            <input type="hidden" name="preco" value="@produto.Preco" />
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
