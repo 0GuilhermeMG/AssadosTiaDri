@@ -3,40 +3,66 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "_Layout";    
 }
 
-<h1>Deletar</h1>
-
-<h3>Tem certeza que deseja deletar esse item?</h3>
-<div>
-    <h4>Produto</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Preco)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Preco)
-        </dd>
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.CodigoDeBarras)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CodigoDeBarras)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ProdutoId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar à lista</a>
-    </form>
+<div class="content-header" style="margin-left: 60px">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Deletar Produto</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Início</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Produtos</a></li>
+                    <li class="breadcrumb-item active">Deletar</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
+
+<section class="content" style="margin-left: 65px">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header bg-danger">
+                <h3 class="card-title">Tem certeza que deseja deletar este produto?</h3>
+            </div>
+            <div class="card-body">
+                <h4>Produto</h4>
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Preco)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Preco)
+                    </dd>
+
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.CodigoDeBarras)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.CodigoDeBarras)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    
+                    <div class="form-group" style="display: flex">
+                        <button type="submit" class="btn btn-block btn-outline-danger btn-flat" style="width: auto"; float>Deletar <i class="fa fa-trash"></i></button>
+
+                        <a href="../" class="btn btn-secondary" style="margin-left: 20px">Cancelar <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

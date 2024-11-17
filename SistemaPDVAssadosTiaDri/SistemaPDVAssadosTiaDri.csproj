@@ -26,4 +26,6 @@
     <Folder Include="Areas\Vendas.cshtml\Views\" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4dist_4js_4_1eslintrc_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>

@@ -23,7 +23,6 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         // GET: Produtos
         public async Task<IActionResult> Index()
         {
-            Console.WriteLine("Fui carregado");
             return View(await _context.Produtos.ToListAsync());
         }
 
@@ -40,7 +39,7 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(produto);
         }
 
@@ -59,7 +58,9 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             {
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SuccessMessage"] = "Produto criado com sucesso!";
+                return Redirect("/Produtos/Index");
+                //return RedirectToAction("Index", "Produtos");
             }
             return View(produto);
         }
@@ -96,6 +97,8 @@ namespace SistemaPDVAssadosTiaDri.Controllers
                 {
                     _context.Update(produto);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Produto Editado com sucesso!";
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -108,7 +111,7 @@ namespace SistemaPDVAssadosTiaDri.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect("/Produtos/Index");
             }
             return View(produto);
         }
@@ -122,11 +125,12 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             }
 
             var produto = await _context.Produtos.FirstOrDefaultAsync(m => m.ProdutoId == id);
+
             if (produto == null)
             {
                 return NotFound();
             }
-
+            
             return View(produto);
         }
 
@@ -142,9 +146,11 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             {
                 _context.Produtos.Remove(produto);
                 await _context.SaveChangesAsync();
-            }
+                TempData["DeleteMessage"] = "Produto Excluído com sucesso!";
 
-            return RedirectToAction(nameof(Index));
+            }
+            return Redirect("/Produtos/Index");
+            //return RedirectToAction(nameof(Index));
         }
 
         private bool ProdutoExists(int id)
@@ -217,8 +223,8 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         {
             var venda = _context.Vendas
                 .Include(v => v.Itens) // Inclui os itens relacionados à venda
-                .ThenInclude(iv => iv.Produto) // Inclui as informações do produto
-                .FirstOrDefault(v => v.VendaId == id);
+                .ThenInclude(i => i.Produto) // Inclui as informações do produto
+                .FirstOrDefault(v => v.VendaId == id);         
 
             if (venda == null)
             {
@@ -246,8 +252,22 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         public IActionResult RemoverItem(int produtoId, decimal preco)
         {
             _vendaService.RemoverItemDoCarrinho(produtoId,preco);
-            Console.WriteLine($"produto={produtoId}, preço={preco}");
             return RedirectToAction("Venda");
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirVenda(int vendaId)
+        {
+            var venda = _context.Vendas
+                .Include(v => v.Itens)
+                .FirstOrDefault(v => v.VendaId == vendaId);
+
+            if (venda != null)
+            {
+                _context.Vendas.Remove(venda);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("ListarVendas");
         }
 
         //        [HttpPost]

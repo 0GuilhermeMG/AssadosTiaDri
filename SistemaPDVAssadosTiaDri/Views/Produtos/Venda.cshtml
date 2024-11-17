@@ -1,69 +1,100 @@
 ﻿@model List<SistemaPDVAssadosTiaDri.Models.Produto>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     ViewBag.Title = "Venda";
+    Layout = "_Layout";
 }
 
-<h2>Venda de Produtos</h2>
+<div class="content-header" style="margin-left: 70px">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Venda de Produtos</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Início</a></li>
+                    <li class="breadcrumb-item active">Venda</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Formulário para entrada de código de barras -->
-<form id="barcodeForm" asp-action="AdicionarProduto" method="post">
-    <label for="codigoBarras">Código de Barras:</label>
-    <input type="text" id="codigoBarras" name="codigoBarras" required autofocus />
-</form>
+<section class="content" style="margin-left: 70px">
+    <div class="container-fluid">
 
-<script >
-    src = "/_framework/aspnetcore-browser-refresh.js"
-    document.getElementById('codigoBarras').addEventListener('input', function () {
-        if (this.value.length == 13) {
-            document.getElementById('barcodeForm').submit();
+        <!-- Formulário para entrada de código de barras -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Adicionar Produto pelo Código de Barras</h3>
+            </div>
+            <div class="card-body">
+                <form id="barcodeForm" asp-action="AdicionarProduto" method="post" class="form-inline">
+                    <label for="codigoBarras" class="mr-2">Código de Barras:</label>
+                    <input type="text" id="codigoBarras" name="codigoBarras" class="form-control" required autofocus />
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('codigoBarras').addEventListener('input', function () {
+                if (this.value.length == 13) {
+                    document.getElementById('barcodeForm').submit();
+                }
+            });
+        </script>
+
+        <!-- Exibição dos produtos no carrinho -->
+        @if (Model != null && Model.Count > 0)
+        {
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3 class="card-title">Produtos no Carrinho</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var produto in Model)
+                            {
+                                <tr>
+                                    <td>@produto.Nome</td>
+                                    <td>@produto.Preco.ToString("C")</td>
+                                    <td>
+                                        <form method="post" asp-action="RemoverItem" class="d-inline">
+                                            <input type="hidden" name="produtoId" value="@produto.ProdutoId" />
+                                            <input type="hidden" name="preco" value="@produto.Preco" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <h4>Total: @ViewBag.Total.ToString("C")</h4>
+                </div>
+            </div>
+
+            <!-- Botão de Finalizar Venda -->
+            <div class="text-right mt-3">
+                <form asp-action="FinalizarVenda" method="post">
+                    <button type="submit" class="btn btn-success">Finalizar Venda</button>
+                </form>
+            </div>
         }
-    });
-</script>
-
-<!-- Exibição dos produtos no carrinho -->
-@if (Model != null && Model.Count > 0)
-{
-    <h3>Produtos no Carrinho:</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Preço</th> 
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var produto in Model)
-            {
-                //decimal precoDoBanco = preco / produto.Preco;
-
-                <tr>
-                    <td>@produto.Nome</td>
-                    <td>@produto.Preco.ToString("C")</td>
-                    <td>
-                        <form method="post" asp-action="RemoverItem">
-                            <input type="hidden" name="produtoId" value="@produto.ProdutoId" />
-                            <input type="hidden" name="preco" value="@produto.Preco" />
-                            <button type="submit" class="btn btn-danger">Excluir</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <!-- Exibição do total -->
-    <h3>Total: @ViewBag.Total.ToString("C")</h3>
-}
-else
-{
-    <p>Nenhum produto no carrinho.</p>
-}
-
-<form asp-action="FinalizarVenda" method="post">
-    <button type="submit" id="FinalizarVenda">Finalizar Venda</button>
-</form>
-
-<!-- Script para o Browser Refresh -->
-
+        else
+        {
+            <p style="margin: 65px">Nenhum produto no carrinho.</p>
+        }
+    </div>
+</section>
