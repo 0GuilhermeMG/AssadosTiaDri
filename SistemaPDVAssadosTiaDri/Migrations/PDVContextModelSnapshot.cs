@@ -30,13 +30,10 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemVendaId"));
 
-                    b.Property<decimal>("PrecoUnitario")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
                     b.Property<int>("VendaId")
@@ -68,7 +65,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("ProdutoId");
 
@@ -83,11 +80,11 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VendaId"));
 
-                    b.Property<DateTime>("Data")
+                    b.Property<DateTime>("DataVenda")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Total")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("VendaId");
 
@@ -103,7 +100,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
                         .IsRequired();
 
                     b.HasOne("SistemaPDVAssadosTiaDri.Models.Venda", "Venda")
-                        .WithMany("ItensVenda")
+                        .WithMany("Itens")
                         .HasForeignKey("VendaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -115,7 +112,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
 
             modelBuilder.Entity("SistemaPDVAssadosTiaDri.Models.Venda", b =>
                 {
-                    b.Navigation("ItensVenda");
+                    b.Navigation("Itens");
                 });
 #pragma warning restore 612, 618
         }

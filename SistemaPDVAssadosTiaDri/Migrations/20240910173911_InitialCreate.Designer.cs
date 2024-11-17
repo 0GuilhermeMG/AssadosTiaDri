@@ -39,9 +39,6 @@ namespace SistemaPDVAssadosTiaDri.Migrations
                     b.Property<int>("ProdutoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
                     b.Property<int>("VendaId")
                         .HasColumnType("int");
 

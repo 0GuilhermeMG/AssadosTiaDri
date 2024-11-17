@@ -23,7 +23,6 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         // GET: Produtos
         public async Task<IActionResult> Index()
         {
-            Console.WriteLine("Fui carregado");
             return View(await _context.Produtos.ToListAsync());
         }
 
@@ -40,7 +39,7 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(produto);
         }
 
@@ -59,7 +58,9 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             {
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SuccessMessage"] = "Produto criado com sucesso!";
+                return Redirect("/Produtos/Index");
+                //return RedirectToAction("Index", "Produtos");
             }
             return View(produto);
         }
@@ -96,6 +97,8 @@ namespace SistemaPDVAssadosTiaDri.Controllers
                 {
                     _context.Update(produto);
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Produto Editado com sucesso!";
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -108,7 +111,7 @@ namespace SistemaPDVAssadosTiaDri.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect("/Produtos/Index");
             }
             return View(produto);
         }
@@ -122,13 +125,16 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             }
 
             var produto = await _context.Produtos.FirstOrDefaultAsync(m => m.ProdutoId == id);
+
             if (produto == null)
             {
                 return NotFound();
             }
-
+            
             return View(produto);
         }
+
+
 
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -140,9 +146,11 @@ namespace SistemaPDVAssadosTiaDri.Controllers
             {
                 _context.Produtos.Remove(produto);
                 await _context.SaveChangesAsync();
-            }
+                TempData["DeleteMessage"] = "Produto Excluído com sucesso!";
 
-            return RedirectToAction(nameof(Index));
+            }
+            return Redirect("/Produtos/Index");
+            //return RedirectToAction(nameof(Index));
         }
 
         private bool ProdutoExists(int id)
@@ -167,16 +175,17 @@ namespace SistemaPDVAssadosTiaDri.Controllers
         public IActionResult AdicionarProduto(string codigoBarras)
         {
 
-            Console.WriteLine($"Código de barras recebido: {codigoBarras}"); // Adiciona uma mensagem de log
+            Console.WriteLine($"Código de barras recebido: {codigoBarras}");
 
             var produto = _vendaService.ProcessarCodigoBarras(codigoBarras);
             //Console.WriteLine($"Informações da tentativa de retirar: Nome={produto.Nome}, Preço={produto.Preco}");
             if (produto != null)
             {
-                Console.WriteLine($"Produto encontrado: Nome={produto.Nome}, Preço={produto.Preco}"); // Adiciona uma mensagem de log
+                Console.WriteLine($"Produto encontrado: Nome={produto.Nome}, Preço={produto.Preco}"); 
+
                 _vendaService.AdicionarAoCarrinho(produto);
                 ViewBag.Total = _vendaService.CalcularTotal();
-                return View("Venda", _vendaService.ObterCarrinho());
+                return View("Venda", _vendaService.ObterCarrinho());   
             }
             else
             {
@@ -185,7 +194,90 @@ namespace SistemaPDVAssadosTiaDri.Controllers
                 ViewBag.Total = _vendaService.CalcularTotal();
                 return View("Venda", _vendaService.ObterCarrinho());
             }
+
+            //return View("Venda", _vendaService.ObterCarrinho());
         }
+
+        [HttpPost]
+        public async Task<IActionResult> FinalizarVenda()
+        {
+            int vendaId = await _vendaService.FinalizarVenda();
+            // Crie uma nova venda antes de passar ao serviço
+            //var venda = new Venda
+            //{
+            //    DataVenda = DateTime.Now,
+            //    Total = _vendaService.CalcularTotal()
+            //  //   Outros campos que você precisar preencher
+            //};
+
+            //var vendaId = _vendaService.FinalizarVendas(venda);
+            //_vendaService.FinalizarVenda();
+
+            //Testar se funciona antes de dormir pfvr
+
+            return RedirectToAction("ConfirmacaoVenda" , new { id = vendaId });
+        }
+
+
+        public IActionResult ConfirmacaoVenda(int id)
+        {
+            var venda = _context.Vendas
+                .Include(v => v.Itens) // Inclui os itens relacionados à venda
+                .ThenInclude(i => i.Produto) // Inclui as informações do produto
+                .FirstOrDefault(v => v.VendaId == id);         
+
+            if (venda == null)
+            {
+                return NotFound(); // Caso a venda não seja encontrada
+            }
+
+            return View(venda); // Retorna a View com os detalhes da venda
+        }
+
+        public IActionResult ListarVendas()
+        {
+            // Pega todas as vendas do banco de dados
+            var vendas = _context.Vendas
+                .Include(v => v.Itens)
+                .ThenInclude(i => i.Produto)
+                .OrderByDescending(v => v.DataVenda) // Ordena por data da venda em ordem decrescente
+                .ToList();
+
+            // Retorna as vendas para a view
+            return View(vendas);
+        }
+
+
+        [HttpPost]
+        public IActionResult RemoverItem(int produtoId, decimal preco)
+        {
+            _vendaService.RemoverItemDoCarrinho(produtoId,preco);
+            return RedirectToAction("Venda");
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirVenda(int vendaId)
+        {
+            var venda = _context.Vendas
+                .Include(v => v.Itens)
+                .FirstOrDefault(v => v.VendaId == vendaId);
+
+            if (venda != null)
+            {
+                _context.Vendas.Remove(venda);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("ListarVendas");
+        }
+
+        //        [HttpPost]
+        //        public IActionResult FinalizarVenda()
+        //        {
+        //            ViewBag.Total = _vendaService.CalcularTotal();
+        //            _vendaService.FinalizarVenda();
+        //            //return RedirectToAction("Venda");
+        //            return View("FinalizarVenda", _vendaService.ObterCarrinho());
+        //        }
 
     }
 }

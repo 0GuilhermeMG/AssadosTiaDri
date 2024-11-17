@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaPDVAssadosTiaDri")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+510d2f39547d7d584fe6711ac13fc0fc2d669845")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaPDVAssadosTiaDri")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaPDVAssadosTiaDri")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

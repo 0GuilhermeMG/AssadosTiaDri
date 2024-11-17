@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SistemaPDVAssadosTiaDri.Models.Venda>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "ListarVendas";
+    Layout = "_Layout";
+}
+
+<h2 class="text-center mt-4" style="margin-left: 65px">Lista de Vendas</h2>
+
+<div class="table-responsive mt-4" style="margin-left: 65px">
+    <table class="table table-striped table-hover align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Data da Venda</th>
+                <th>Total</th>
+                <th>Itens</th>
+                <!--<th>Ações</th>-->
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                @foreach (var venda in Model)
+                {
+                    <tr>
+                        <td>@venda.VendaId</td>
+                        <td>@venda.DataVenda.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                        <td>@venda.Total.ToString("C")</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                @foreach (var item in venda.Itens)
+                                {
+                                    <li>
+                                        <i class="fas fa-box-open me-2 text-primary"></i>
+                                        <strong>@item.Produto.Nome</strong> - @item.Preco.ToString("C")
+                                    </li>
+                                }
+                            </ul>
+                        </td>
+                        <!--<td>
+                            <form asp-action="ExcluirVenda" asp-controller="Venda" method="post" class="d-inline">
+                                <input type="hidden" name="vendaId" value="@venda.VendaId" />
+                                 <button type="submit" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash-alt me-1"></i>
+                                    Excluir
+                                </button> 
+                            </form>
+                        </td>-->
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-muted">
+                        <i class="fas fa-info-circle me-2"></i>Nenhuma venda registrada.
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!--<div class="d-flex justify-content-end" style="margin-left: 65px">
+    <a hre" asp-controller="Produto" class="btn btn-primary">
+        <i class="fas fa-arrow-left me-2"></i>Voltar
+    </a>
+</div>-->
