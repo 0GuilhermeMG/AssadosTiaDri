@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< Updated upstream
   "WorkspaceRootPath": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\",
   "Documents": [
     {
@@ -67,6 +68,51 @@
     {
       "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\sistemapdvassadostiadri\\assadostiadri\\sistemapdvassadostiadri\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\views\\produtos\\venda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\views\\produtos\\venda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\views\\produtos\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\views\\produtos\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\services\\vendaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\services\\vendaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.Vendas.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\views\\produtos\\listarvendas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\views\\produtos\\listarvendas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.ItensVenda.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\views\\produtos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\views\\produtos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\models\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\models\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|c:\\users\\guilh\\source\\repos\\development2\\assadostiadri-development2\\sistemapdvassadostiadri\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFC60E2E-5F3C-4911-909E-83F59CFA8D6D}|SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj|solutionrelative:sistemapdvassadostiadri\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -76,6 +122,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 6,
           "Children": [
             {
@@ -87,6 +134,19 @@
               "ToolTip": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Controllers\\ProdutosController.cs",
               "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Controllers\\ProdutosController.cs",
               "ViewState": "AgIAALgAAAAAAAAAAAAAAM4AAAArAAAAAAAAAA==",
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdutosController.cs",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Controllers\\ProdutosController.cs",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Controllers\\ProdutosController.cs",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Controllers\\ProdutosController.cs",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Controllers\\ProdutosController.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAswMsAAABEAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T21:14:30.366Z",
               "IsPinned": true,
@@ -96,6 +156,7 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "VendaService.cs",
+<<<<<<< Updated upstream
               "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
               "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
               "ToolTip": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
@@ -105,10 +166,21 @@
               "WhenOpened": "2024-09-13T21:14:39.587Z",
               "IsPinned": true,
               "EditorCaption": ""
+=======
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Services\\VendaService.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAgwH4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T21:14:39.587Z",
+              "IsPinned": true
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< Updated upstream
               "Title": "Venda.cs",
               "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Models\\Venda.cs",
               "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Models\\Venda.cs",
@@ -119,10 +191,22 @@
               "WhenOpened": "2024-09-29T23:32:25.168Z",
               "IsPinned": true,
               "EditorCaption": ""
+=======
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Dashboard.cshtml",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Dashboard.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-12T19:20:11.481Z",
+              "IsPinned": true
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< Updated upstream
               "Title": "ItemVenda.cs",
               "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Models\\ItemVenda.cs",
               "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Models\\ItemVenda.cs",
@@ -143,10 +227,22 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2024-10-31T19:09:45.873Z",
               "EditorCaption": ""
+=======
+              "Title": "Venda.cshtml",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Venda.cshtml",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Venda.cshtml",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Venda.cshtml",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Venda.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAFsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-10T21:27:53.169Z",
+              "IsPinned": true
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+<<<<<<< Updated upstream
               "Title": "dbo.ItensVenda [Dados]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.ItensVenda.sql",
               "ToolTip": "dbo.ItensVenda [Dados]",
@@ -205,10 +301,39 @@
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
               "WhenOpened": "2024-10-29T18:31:29.219Z",
               "EditorCaption": ""
+=======
+              "Title": "dbo.Vendas.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.Vendas.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.Vendas.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-23T22:18:53.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.ItensVenda.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.ItensVenda.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/PDVDB/True/SqlTable/dbo.ItensVenda.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-23T22:18:45.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListarVendas.cshtml",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\ListarVendas.cshtml",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\ListarVendas.cshtml",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\ListarVendas.cshtml",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\ListarVendas.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-22T01:34:40.706Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+<<<<<<< Updated upstream
               "Title": "Venda.cshtml",
               "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Venda.cshtml",
               "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Venda.cshtml",
@@ -231,10 +356,21 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T15:02:16.753Z",
               "EditorCaption": ""
+=======
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Views\\Produtos\\Index.cshtml",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Views\\Produtos\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-23T20:02:08.653Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+<<<<<<< Updated upstream
               "Title": "PDVContext.cs",
               "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\Models\\PDVContext.cs",
               "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Models\\PDVContext.cs",
@@ -296,6 +432,40 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T22:03:54.732Z",
               "EditorCaption": ""
+=======
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Pages\\Index.cshtml",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-23T19:28:59.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Venda.cs",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Models\\Venda.cs",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Models\\Venda.cs",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Models\\Venda.cs",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Models\\Venda.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T22:30:51.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "SistemaPDVAssadosTiaDri\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "SistemaPDVAssadosTiaDri\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-22T22:18:30.533Z"
+>>>>>>> Stashed changes
             }
           ]
         }

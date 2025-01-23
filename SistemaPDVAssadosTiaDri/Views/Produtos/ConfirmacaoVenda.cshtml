@@ -1,4 +1,5 @@
 ﻿@model SistemaPDVAssadosTiaDri.Models.Venda
+<<<<<<< Updated upstream
 
 <h2>Detalhes da Venda</h2>
 
@@ -27,3 +28,79 @@
 </table>
 
 <a href="/Produtos/ListarVendas" class="btn btn-primary">Ver todas as vendas</a>
+=======
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "ConfirmcaoVenda";
+    Layout = "_Layout";
+}
+
+<div class="content-wrapper" style="margin: 70px">
+    <section class="content-header">
+        <h2>Detalhes da Venda</h2>
+    </section>
+
+    <section class="content">
+        <!-- Banner de sucesso -->
+        @if (TempData["VendaSucesso"] != null)
+        {
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> Sucesso!</h5>
+                @TempData["VendaSucesso"]
+            </div>
+        }
+
+        <!-- Detalhes da Venda -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Informações da Venda</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Data da Venda:</strong> @Model.DataVenda.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                <p><strong>Total:</strong> R$ @Model.Total.ToString("F2")</p>
+            </div>
+        </div>
+
+        <!-- Itens da Venda -->
+        <div class="card card-info mt-4">
+            <div class="card-header">
+                <h3 class="card-title">Itens da Venda</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Itens)
+                        {
+                            <tr>
+                                <td>@item.Produto.Nome</td>
+                                <td>R$ @(item.Preco)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Botão de Voltar -->
+        <div class="mt-4">
+            <a href="@Url.Action("ListarVendas", "Produtos")" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Ver todas as vendas
+            </a>
+        </div>
+
+        <div class="mt-5">
+            <a href="/Produtos/ImprimirVenda/@Model.VendaId" class="btn btn-success">
+                <i class="fas fa-arrow-left"></i>Imprimir venda
+            </a>
+        </div>
+    </section>
+</div>
+>>>>>>> Stashed changes

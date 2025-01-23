@@ -3,46 +3,113 @@
 
 @{
     ViewData["Title"] = "Index";
-}
+    Layout = "_Layout";
 
-<h1>Index</h1>
+    if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left: 60px">
+            <i class="icon fas fa-check"></i>
+            @TempData["SuccessMessage"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
 
-<p>
-    <a asp-action="Create">Criar Nova</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Preco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.CodigoDeBarras)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoDeBarras)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ProdutoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Deletar</a>
-            </td>
-        </tr>
+    if (TempData["DeleteMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-left: 60px">
+            <i class="icon fas fa-check"></i>
+            @TempData["DeleteMessage"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
 }
-    </tbody>
-</table>
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="stylesheet" href="~/dist/css/AdminLTE.css">
+<link rel="stylesheet" href="~/dist/css/fonts.css">
+
+<!-- Cabeçalho da página -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>@ViewData["Index"]</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" href="../ListarVendas">Lista de Produtos</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conteúdo principal -->
+<section class="content" style="margin-left: 50px">
+    <div class="container-fluid">
+        <!-- Card com tabela de produtos -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title"><i class="fas fa-box-open"></i> Produtos</h3>
+                <div class="card-tools">
+                    <!-- Botão para criar novo produto -->
+                    <a asp-action="Create" class="btn btn-success btn-sm">
+                        <i class="fas fa-plus-circle"></i> Criar Novo
+                    </a>
+                </div>
+            </div>
+            <div class="card-body" >
+                
+                <!-- Tabela de produtos -->
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="width:40%">
+                                <i class="fas fa-tag" ></i> @Html.DisplayNameFor(model => model.Nome)
+                            </th>
+                            <th style="width: 20%">
+                                <i class="fas fa-dollar-sign"></i> @Html.DisplayNameFor(model => model.Preco)
+                            </th>
+                            <th style="width: 20%">
+                                <i class="fas fa-barcode"></i> @Html.DisplayNameFor(model => model.CodigoDeBarras)
+                            </th>
+                            <th style="width: 20%">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Preco)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CodigoDeBarras)</td>
+                                <td class="project-actions text-right">
+                                    <a asp-action="Edit" asp-route-id="@item.ProdutoId" class="btn btn-info btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.ProdutoId" class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.ProdutoId" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <p class="text-muted">Total de Produtos: @Model.Count()</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+

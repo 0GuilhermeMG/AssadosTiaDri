@@ -1,11 +1,29 @@
 ﻿@model List<SistemaPDVAssadosTiaDri.Models.Produto>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
 @{
     ViewBag.Title = "Venda";
+    Layout = "_Layout";
 }
 
-<h2>Venda de Produtos</h2>
+<div class="content-header" style="margin-left: 70px">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Venda de Produtos</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../../../">Início</a></li>
+                    <li class="breadcrumb-item active">Venda</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
+<<<<<<< Updated upstream
 <!-- Formulário para entrada de código de barras -->
 <form id="barcodeForm" asp-action="AdicionarProduto" method="post">
     <label for="codigoBarras">Código de Barras:</label>
@@ -41,10 +59,60 @@
                     <td>@produto.Nome</td>
                     <td>@produto.Preco.ToString("C")</td>
                 </tr>
-            }
-        </tbody>
-    </table>
+=======
+<section class="content" style="margin-left: 70px">
+    <div class="container-fluid">
 
+        <!-- Formulário para entrada de código de barras -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Adicionar Produto pelo Código de Barras</h3>
+            </div>
+            <div class="card-body" style="display:flex;">
+                <form id="barcodeForm" asp-action="AdicionarProduto" method="post" class="form-inline">
+                    <label for="codigoBarras" class="mr-2">Código de Barras:</label>
+                    <input type="text" id="codigoBarras" name="codigoBarras" class="form-control" required autofocus />
+                </form>
+                @* <div class="mt-3" ">
+
+                    <label for="desconto" class="mr-2">Valor do Desconto:</label>
+                    <input type="text" id="valorDesconto" class="form-control" placeholder="Ex.: 10, 20" style="width: 203px;">
+                    <button type="button" class="btn btn-secondary mt-2" onclick="desconto(document.getElementById('valorDesconto').value)">
+                        Gerar Código de Desconto
+                    </button>
+
+                </div> *@
+            </div>
+
+            
+        </div>
+
+        
+
+
+        @* <div class="btn-group mt-3">
+            @foreach(var produto in Model.TodosOsProdutos(p=>
+                p.CodigoDeBarras == "005000"||
+                p.CodigoDeBarras == "315312"||
+                p.CodigoDeBarras == "315399"||
+                p.CodigoDeBarras == "020202"||
+                p.CodigoDeBarras == "030303"||
+                p.CodigoDeBarras == "185618"))
+            {
+                <button type="button" class="btn btn-primary" onclick="preencherForm(@produto.CodigoDeBarras)">
+                    @produto.Nome - R$@produto.Preco.ToString("F2") receba
+                </button>
+>>>>>>> Stashed changes
+            }
+        </div> *@
+            <button type="button" class="btn btn-primary" onclick="preencherForm('2005000029900')">Pudim-R$29,90</button>
+            <button type="button" class="btn btn-secondary" onclick="preencherForm('2315312013000')">Coca-Cola 2L-R$13,00</button>
+            <button type="button" class="btn btn-primary" onclick="preencherForm('2315399004000')">Coca-Lata-R$4,00</button>
+            <button type="button" class="btn btn-secondary" onclick="preencherForm('2020202002000')">Água-R$2,00</button>
+            <button type="button" class="btn btn-primary" onclick="preencherForm('2030303002000')">Água C/gás-R$2,00</button>
+            <button type="button" class="btn btn-secondary" onclick="preencherForm('2185618009000')">Refrigerante 2L-R$9,00</button>
+
+<<<<<<< Updated upstream
     <!-- Exibição do total -->
     <h3>Total: @ViewBag.Total.ToString("C")</h3>
 }
@@ -59,3 +127,99 @@ else
 
 <!-- Script para o Browser Refresh -->
 
+=======
+
+        
+
+        <script>
+
+
+            document.getElementById('codigoBarras').addEventListener('input', function () {
+                if (this.value.length == 13) {
+                    document.getElementById('barcodeForm').submit();
+                }
+            });
+
+            function preencherForm(codigoBarras){
+                document.getElementById('codigoBarras').value = codigoBarras;
+                document.getElementById('barcodeForm').submit();
+            }
+
+            function formataValor(valor) {
+                let valorFormatado = String(valor).replace(',', '.');
+                let valorString = Number(valorFormatado) * 1000;
+                let valorFormatadoToNumber = String(valorString).padStart(6, '0');
+                //let valoremNumber = Number(valorFormatadoToNumber)
+                console.log(valorFormatadoToNumber);
+                
+                return String(valorFormatadoToNumber);
+            }
+
+            function desconto(valor) {          
+                let codigoDesconto = "2000000"; 
+                let codigoDecimal = formataValor(valor) ;
+
+                let codigoDecimalString = String(codigoDecimal);
+
+                let concatenado = codigoDesconto + codigoDecimalString;
+
+                let codigoDescontoReal = String(concatenado);
+                preencherForm(codigoDescontoReal);
+                
+            }
+
+        </script>
+
+        <!-- Exibição dos produtos no carrinho -->
+        @if (Model != null && Model.Count > 0)
+        {
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3 class="card-title">Produtos no Carrinho</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var produto in Model)
+                            {
+                                <tr>
+                                    <td>@produto.Nome</td>
+                                    <td>@produto.Preco.ToString("C")</td>
+                                    <td>
+                                        <form method="post" asp-action="RemoverItem" class="d-inline">
+                                            <input type="hidden" name="produtoId" value="@produto.ProdutoId" />
+                                            <input type="hidden" name="preco" value="@produto.Preco" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <h4>Total: @ViewBag.Total.ToString("C")</h4>
+                </div>
+            </div>
+
+            <!-- Botão de Finalizar Venda -->
+            <div class="text-right mt-3">
+                <form asp-action="FinalizarVenda" method="post">
+                    <button type="submit" class="btn btn-success">Finalizar Venda</button>
+                </form>
+            </div>
+        }
+        else
+        {
+            <p style="margin: 65px">Nenhum produto no carrinho.</p>
+        }
+    </div>
+</section>
+>>>>>>> Stashed changes

@@ -1,0 +1,79 @@
+﻿@model SistemaPDVAssadosTiaDri.Models.Venda
+
+@{
+    Layout = "_Layout";
+}
+
+<script>
+
+    window.onload = function () {
+        window.print();
+    };
+
+
+
+</script>
+
+<link rel="stylesheet" href="~/css/Print.css" media="print">
+
+<div class="content-wrapper" style="font-size: 9px">
+    <section class="content-header">
+        <h1>Detalhes da Venda</h1>
+        <ol class="breadcrumb">
+            <li><a href="../../../../"><i class="fa fa-dashboard"></i> Início </a></li>
+            <li> / </li>
+            <li><a href="../Index"> Produtos </a></li><br />                       
+        </ol>
+        <h2 class="box-title">Venda N @Model.VendaId</h2>
+    </section>
+
+    <section>
+        <div class="box content-print">
+            <div class="box-header with-border">
+                
+                <div class="box-tools pull-right">
+                    
+                    <button onclick="window.print()" class="btn"><i class="fa fa-print">Imprimir</i></button>
+                    
+                </div>
+            </div>
+            <div class="content-wrapper" style="margin-right:0px">
+                <p style="border-top:outset"></p>
+                <span style="margin-left:10mm"><strong>Assados Tia Dri</strong></span><br />
+                <span style="margin-left:10mm"><small> @Model.DataVenda.ToString("dd/MM/yyyy HH:mm:ss")</small></span><br />
+                
+
+                <!--<h4>Itens da venda</h4>-->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <!--<tr>
+                            <th>#</th>
+                            <th>Produtos</th>
+                            <th>Preço</th>
+                        </tr>-->
+                        <span style="margin-left:10mm"><strong>Produtos</strong></span>
+                        <br />
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Itens)
+                        {
+                            <!--<tr>
+                                <td style="width:12%">
+                                <td>@item.ItemVendaId</td-->
+                            <div class="precoProduto">
+                                <span class="produtoImpresso" style="text-align:left">@item.Produto.Nome &nbsp;&nbsp;</span>
+                                <span style="text-align:right"><strong>R$@item.Preco</strong></span>
+                                <br />
+                            </div>
+                            <!--</td>
+                            </tr>-->
+                        }
+                        <br />                        
+                        <p class="valor"><strong>Total:</strong> R$ @Model.Total.ToString("F2") </p>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+

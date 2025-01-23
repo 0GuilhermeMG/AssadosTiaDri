@@ -1,0 +1,73 @@
+﻿@media print {
+
+    .content-wrapper {
+        width: 100%;
+        max-width: 80mm;
+        margin: 0 auto;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
+        transform: none;
+    }
+
+    .wrapper{
+        padding:0px;
+    }
+
+    .table{
+        border-collapse:collapse;
+        width:100%;
+    }
+
+    .table th, .table id, .table td{
+        
+        border: 0.2mm solid #000;
+    }
+
+    .table td span{
+  
+        margin-bottom:0px;
+    }
+
+    .table td strong {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .header, footer{
+        display:none;
+    }
+
+    .btn{
+        display:none;
+    }
+
+    .box{
+        width:48mm;
+        font-size:12px;
+    }
+
+    span {
+        width: 50%; /* Set any width you prefer */
+        height: 50%;
+    }
+
+    .produtoImpresso{
+        white-space:nowrap;
+        
+    }
+
+    .precoProduto{
+        display:flex;
+        justify-content:flex-end;
+    }
+
+    .valor {
+        margin-left:55px;
+        border-bottom:outset ;
+    }
+}

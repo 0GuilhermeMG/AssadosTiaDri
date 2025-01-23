@@ -11,7 +11,8 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.8",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.4"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.4",
+          "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "SistemaPDVAssadosTiaDri.dll": {}

@@ -1,51 +1,193 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SistemaPDVAssadosTiaDri</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SistemaPDVAssadosTiaDri.styles.css" asp-append-version="true" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assados Tia Dri</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/fontawesome.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/dist/css/AdminLTE.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SistemaPDVAssadosTiaDri</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
+                </li>
+                
+            </ul>
+
+            <!-- Right navbar links -->
+            
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="position:fixed">
+            <!-- Brand Logo -->
+            <a href="../../../../../" class="brand-link">
+                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Assados Tia Dri</span>
+            </a>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - SistemaPDVAssadosTiaDri - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                  @* <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                      <div class="image">
+                          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                      </div>
+                      <div class="info">
+                          <a href="#" class="d-block">Alexander Pierce</a>
+                      </div>
+                  </div> *@
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+                <!-- SidebarSearch Form -->
+                <div class="form-inline" style="height: 100%">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-    @await RenderSectionAsync("Scripts", required: false)
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                             with font-awesome or any other icon font library -->
+                       @*  <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../index.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../index2.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v2</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../index3.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v3</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> *@
+                        <li class="nav-item">
+                            <a href="./../../../../Produtos/Venda" class="nav-link">
+                                <i class="fas fa-dollar-sign"></i>
+                                <p>
+                                    Vender
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./../../../produtos/Index" class="nav-link">
+                                <i class="fas fa-box-open"></i>
+                                <p>
+                                    Produtos
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./../../../Produtos/ListarVendas" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Listar Vendas 
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="./../../../Produtos/Dashboard" class="nav-link">
+                                <i class="fas fa-chart-pie mr-1"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                       
+                        
+                        
+                        
+                               
+                        
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        
+    @RenderBody()
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/dist/js/demo.js"></script>
+
+    <script>
+        // dropdown menu toggle function
+        function toggleDropdown($toggle) {
+            $toggle.next(".dropdown-menu").toggleClass("show");
+        }
+
+        // when the dropdown menu is clicked
+        $(".dropdown-toggle").on("click", function (e) {
+            e.stopPropagation(); // stop propagating click events
+            toggleDropdown($(this));
+        });
+
+        // Close all drop-down menus when the entire document is clicked
+        $(document).on("click", function () {
+            $(".dropdown-menu").removeClass("show");
+        });
+
+            
+    </script>
 </body>
 </html>

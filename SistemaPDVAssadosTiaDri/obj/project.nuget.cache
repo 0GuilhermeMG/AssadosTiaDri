@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "146gpt78XNE=",
   "success": true,
   "projectFilePath": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj",
+=======
+  "dgSpecHash": "2mwLXJGhvlk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\guilh\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

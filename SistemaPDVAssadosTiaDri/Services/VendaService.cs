@@ -48,14 +48,22 @@ namespace SistemaPDVAssadosTiaDri.Services
                     {
                         ProdutoId = produto.ProdutoId,
                         Nome = produto.Nome,
+<<<<<<< Updated upstream
                         Preco = preco 
                     };
                 }
                 
+=======
+                        Preco = preco
+                    };
+                }
+
+>>>>>>> Stashed changes
             }
             return null;
         }
 
+<<<<<<< Updated upstream
   
 
         public int FinalizarVendas(Venda venda)
@@ -68,6 +76,20 @@ namespace SistemaPDVAssadosTiaDri.Services
 
 
         public void FinalizarVenda()
+=======
+
+
+        //public int FinalizarVendas(Venda venda)
+        //{
+        //    _context.Vendas.Add(venda);
+        //    _context.SaveChanges();
+
+        //    return venda.VendaId; // Retorna o ID da venda
+        //}
+
+
+        public async Task<int> FinalizarVenda()
+>>>>>>> Stashed changes
         {
             var venda = new Venda
             {
@@ -82,9 +104,16 @@ namespace SistemaPDVAssadosTiaDri.Services
             };
 
             _context.Vendas.Add(venda);
+<<<<<<< Updated upstream
             _context.SaveChangesAsync();
 
             LimparCarrinho(); // Limpa o carrinho após finalizar a venda           
+=======
+            await _context.SaveChangesAsync();
+
+            LimparCarrinho(); // Limpa o carrinho após finalizar a venda
+            return venda.VendaId;
+>>>>>>> Stashed changes
         }
 
         public void AdicionarAoCarrinho(Produto produto)
@@ -109,10 +138,17 @@ namespace SistemaPDVAssadosTiaDri.Services
             Carrinho = new List<Produto>();
         }
 
+<<<<<<< Updated upstream
         public void RemoverDoCarrinho(int produtoId)
         {
             var carrinho = Carrinho;
             var produto = carrinho.FirstOrDefault(p => p.ProdutoId == produtoId);
+=======
+        public void RemoverItemDoCarrinho(int produtoId, decimal preco)
+        {
+            var carrinho = Carrinho;
+            var produto = carrinho.FirstOrDefault(p => p.ProdutoId == produtoId && p.Preco == preco);
+>>>>>>> Stashed changes
             if (produto != null)
             {
                 carrinho.Remove(produto);
@@ -120,7 +156,11 @@ namespace SistemaPDVAssadosTiaDri.Services
             }
         }
 
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
 
     }
 }
