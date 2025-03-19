@@ -10729,6 +10729,10 @@ body,
   margin-top: calc(2.93725rem + 1px);
 }
 
+.sidebar{
+    height : 100vh;
+}
+
 .layout-navbar-fixed.layout-fixed.text-sm .wrapper .control-sidebar {
   top: calc(2.93725rem + 1px);
 }
@@ -22548,6 +22552,9 @@ blockquote.quote-gray-dark h6 {
 }
 
 @media print {
+    html, body{
+        height:99%;
+    }
   .no-print, .main-sidebar,
   .main-header,
   .content-header {

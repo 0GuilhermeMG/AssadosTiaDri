@@ -21,7 +21,8 @@
             modelBuilder.Entity<ItemVenda>()
                 .HasOne(iv => iv.Produto)
                 .WithMany()
-                .HasForeignKey(iv => iv.ProdutoId);
+                .HasForeignKey(iv => iv.ProdutoId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             // Definindo precisão para as colunas decimal
             modelBuilder.Entity<ItemVenda>()

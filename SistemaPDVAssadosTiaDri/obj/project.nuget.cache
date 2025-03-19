@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "146gpt78XNE=",
+  "dgSpecHash": "2mwLXJGhvlk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\guilh\\source\\repos\\SistemaPDVAssadosTiaDri\\AssadosTiaDri\\SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj",
+  "projectFilePath": "C:\\Users\\guilh\\source\\repos\\Development2\\AssadosTiaDri-Development2\\SistemaPDVAssadosTiaDri\\SistemaPDVAssadosTiaDri.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\guilh\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

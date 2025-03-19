@@ -17,83 +17,87 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaPDVAssadosTiaDri
 build_property.RootNamespace = SistemaPDVAssadosTiaDri
-build_property.ProjectDir = C:\Users\guilh\source\repos\SistemaPDVAssadosTiaDri\AssadosTiaDri\SistemaPDVAssadosTiaDri\
+build_property.ProjectDir = C:\Users\guilh\source\repos\Development2\AssadosTiaDri-Development2\SistemaPDVAssadosTiaDri\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\guilh\source\repos\SistemaPDVAssadosTiaDri\AssadosTiaDri\SistemaPDVAssadosTiaDri
+build_property.MSBuildProjectDirectory = C:\Users\guilh\source\repos\Development2\AssadosTiaDri-Development2\SistemaPDVAssadosTiaDri
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/Error.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/Index.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/Privacy.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/_ViewImports.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/_ViewStart.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/ConfirmacaoVenda.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/ConfirmacaoVenda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcQ29uZmlybWFjYW9WZW5kYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/Create.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/Delete.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/Details.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/Edit.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/FinalizarVenda.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/FinalizarVenda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRmluYWxpemFyVmVuZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/Index.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/ImprimirVenda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW1wcmltaXJWZW5kYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/ListarVendas.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/ListarVendas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcTGlzdGFyVmVuZGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/Venda.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Produtos/Venda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcVmVuZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Produtos/VerItensVenda.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcVmVySXRlbnNWZW5kYS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/guilh/source/repos/SistemaPDVAssadosTiaDri/AssadosTiaDri/SistemaPDVAssadosTiaDri/Pages/Shared/_Layout.cshtml]
+[C:/Users/guilh/source/repos/Development2/AssadosTiaDri-Development2/SistemaPDVAssadosTiaDri/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dm8sesouhe

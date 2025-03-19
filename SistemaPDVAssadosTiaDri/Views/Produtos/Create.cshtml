@@ -29,7 +29,8 @@
 
             <div class="form-group">
                 <label asp-for="CodigoDeBarras" class="control-label">Código de Barras</label>
-                <input asp-for="CodigoDeBarras" class="form-control" placeholder="Digite o código de barras Ex: 001000" />
+                <input asp-for="CodigoDeBarras" class="form-control" placeholder="Digite o código de barras Ex: 001000" 
+                    pattern="\d{6}" maxlength="6" minlength="6" title="O código deve conter 6 digitos numéricos"/>
                 <span asp-validation-for="CodigoDeBarras" class="text-danger"></span>
             </div>
         </div>

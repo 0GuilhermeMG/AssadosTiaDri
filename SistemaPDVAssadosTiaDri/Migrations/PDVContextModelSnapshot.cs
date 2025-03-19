@@ -96,7 +96,7 @@ namespace SistemaPDVAssadosTiaDri.Migrations
                     b.HasOne("SistemaPDVAssadosTiaDri.Models.Produto", "Produto")
                         .WithMany()
                         .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("SistemaPDVAssadosTiaDri.Models.Venda", "Venda")

@@ -28,7 +28,7 @@
                 <h3 class="card-title">Informações da Venda</h3>
             </div>
             <div class="card-body">
-                <p><strong>Data da Venda:</strong> @Model.DataVenda.ToString("dd/MM/yyyy HH:mm")</p>
+                <p><strong>Data da Venda:</strong> @Model.DataVenda.ToString("dd/MM/yyyy HH:mm:ss")</p>
                 <p><strong>Total:</strong> R$ @Model.Total.ToString("F2")</p>
             </div>
         </div>
@@ -63,6 +63,12 @@
         <div class="mt-4">
             <a href="@Url.Action("ListarVendas", "Produtos")" class="btn btn-primary">
                 <i class="fas fa-arrow-left"></i> Ver todas as vendas
+            </a>
+        </div>
+
+        <div class="mt-5">
+            <a href="/Produtos/ImprimirVenda/@Model.VendaId" class="btn btn-success">
+                <i class="fas fa-arrow-left"></i>Imprimir venda
             </a>
         </div>
     </section>

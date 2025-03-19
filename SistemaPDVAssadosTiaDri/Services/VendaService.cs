@@ -42,21 +42,30 @@ namespace SistemaPDVAssadosTiaDri.Services
                 decimal preco = decimal.Parse(precoString) / 100;
 
                 var produto = _context.Produtos.FirstOrDefault(p => p.CodigoDeBarras == codigoProduto);
+
+                if (codigoProduto == "000000") {
+                    return new Produto
+                    {
+                        ProdutoId = produto.ProdutoId,
+                        Nome = produto.Nome,
+                        Preco = preco * -1
+                    };
+                }
                 if (produto != null)
                 {
                     return new Produto
                     {
                         ProdutoId = produto.ProdutoId,
                         Nome = produto.Nome,
-                        Preco = preco 
+                        Preco = preco
                     };
                 }
-                
+
             }
             return null;
         }
 
-  
+
 
         //public int FinalizarVendas(Venda venda)
         //{
@@ -67,7 +76,7 @@ namespace SistemaPDVAssadosTiaDri.Services
         //}
 
 
-        public async Task<int>FinalizarVenda()
+        public async Task<int> FinalizarVenda()
         {
             var venda = new Venda
             {
@@ -121,7 +130,7 @@ namespace SistemaPDVAssadosTiaDri.Services
             }
         }
 
-        
+
 
     }
 }
